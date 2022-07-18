@@ -54,4 +54,10 @@ public class Dev {
 		}
 		return devXP;
 	}
+	
+	public void toString(List<Conteudo> conteudos) {
+		for(Conteudo conteudo : conteudos) {
+			System.out.println(conteudo.getTitulo());
+		}
+	}
 }
