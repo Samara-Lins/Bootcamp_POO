@@ -1,4 +1,7 @@
 
+import java.util.LinkedHashSet;
+import java.util.Set;
+
 public class Main {
 	public static void main(String[] args) {
 		Curso curso1 = new Curso();
@@ -12,7 +15,25 @@ public class Main {
 		curso2.setDescricao("Instrodução à linguagem Java");
 		curso2.setCargaHoraria(4);
 		
-		curso1.imprimir(curso1);
-		curso2.imprimir(curso2);
+		Mentoria mentoria1 = new Mentoria();
+		mentoria1.setTitulo("Pensamento Computacional");
+		mentoria1.setDescricao("Introdução ao pensamento"
+				+ " computacional e dicas");
+		
+		Bootcamp bootcamp1 = new Bootcamp();
+		Set<Conteudo> conteudos1 = new LinkedHashSet<>();
+		conteudos1.add(curso1);
+		conteudos1.add(curso2);
+		conteudos1.add(mentoria1);
+		bootcamp1.setConteudos(conteudos1);
+		
+		Dev dev1 = new Dev();
+		dev1.setNome("Samara Estrela");
+		dev1.inscreverBootcamp(bootcamp1);
+		dev1.progredir();
+		dev1.progredir();
+		
+		System.out.println(dev1.getNome());
+		System.out.println("DEV XP: "+dev1.calcularXP());
 	}
 }

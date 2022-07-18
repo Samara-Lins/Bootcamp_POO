@@ -34,14 +34,29 @@ public class Bootcamp extends Conteudo{
 	public LocalDate getDataFinal() {
 		return dataFinal;
 	}
+	
+	public Set<Dev> getDevs() {
+		return devs;
+	}
+
+	public void setDevs(Set<Dev> devs) {
+		this.devs = devs;
+	}
+
+	public Set<Conteudo> getConteudos() {
+		return conteudos;
+	}
+
+	public void setConteudos(Set<Conteudo> conteudos) {
+		this.conteudos = conteudos;
+	}
 
 	@Override
 	public double calcularXP() {
 		double xpDev = 0;
 		for (Conteudo conteudo : conteudos) {
-			if (conteudo.getClass().c) {
-				
-			}
+			xpDev += conteudo.calcularXP();
 		}
+		return xpDev;
 	}
 }
